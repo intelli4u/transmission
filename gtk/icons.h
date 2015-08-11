@@ -3,7 +3,7 @@
  * "There is no problem for me, you can license
  * my code under whatever licence you wish :)"
  *
- * $Id$
+ * $Id: icons.h 11709 2011-01-19 13:48:47Z jordan $
  */
 
 #ifndef GTR_ICONS_H

@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: handshake.c 13527 2012-09-25 02:07:03Z jordan $
  */
 
 #include <assert.h>

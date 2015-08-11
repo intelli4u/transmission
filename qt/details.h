@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: details.h 11452 2010-12-04 00:19:52Z charles $
  */
 
 #ifndef DETAILS_DIALOG_H

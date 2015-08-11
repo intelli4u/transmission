@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: bencode.h 12391 2011-04-27 21:22:08Z jordan $
  */
 
 #ifndef TR_BENCODE_H

@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: add-data.cc 12697 2011-08-20 05:19:27Z jordan $
  */
 
 #include <QFile>

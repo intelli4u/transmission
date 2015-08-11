@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: peer-msgs.h 12411 2011-05-01 19:10:34Z jordan $
  */
 
 #ifndef __TRANSMISSION__

@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: stats-dialog.h 11092 2010-08-01 20:36:13Z charles $
  */
 
 #ifndef STATS_DIALOG_H

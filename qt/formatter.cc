@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: formatter.cc 13195 2012-02-03 21:21:52Z jordan $
  */
 
 #include <iostream>

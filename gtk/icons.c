@@ -3,7 +3,7 @@
  * "There is no problem for me, you can license my code
  * under whatever licence you wish :)"
  *
- * $Id$
+ * $Id: icons.c 12639 2011-08-07 18:41:13Z jordan $
  */
 
 #include <string.h> /* strcmp */

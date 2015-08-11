@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: daemon.c 13330 2012-05-30 17:59:52Z jordan $
  */
 
 #include <errno.h>

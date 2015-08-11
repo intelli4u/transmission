@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: port-forwarding.c 13199 2012-02-04 01:28:15Z jordan $
  */
 
 #include <assert.h>

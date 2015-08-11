@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: clients.c 13099 2011-11-22 03:30:37Z livings124 $
  */
 
 /* thanks amc1! */

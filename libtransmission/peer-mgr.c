@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: peer-mgr.c 13549 2012-10-05 22:04:08Z jordan $
  */
 
 #include <assert.h>

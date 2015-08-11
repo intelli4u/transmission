@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: utils.c 13577 2012-10-16 03:13:05Z jordan $
  */
 
 #ifdef HAVE_MEMMEM

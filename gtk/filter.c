@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: filter.c 13388 2012-07-14 19:26:55Z jordan $
  */
 
 #include <stdlib.h> /* qsort() */

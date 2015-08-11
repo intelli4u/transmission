@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: cache.c 12653 2011-08-08 16:58:29Z jordan $
  */
 
 #include <stdlib.h> /* qsort() */

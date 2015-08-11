@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: list.c 12314 2011-04-05 00:59:49Z jordan $
  */
 
 #include "transmission.h"

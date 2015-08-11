@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: bandwidth.c 13361 2012-07-01 02:17:35Z jordan $
  */
 
 #include <assert.h>

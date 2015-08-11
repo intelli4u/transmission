@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id$
+ * $Id: cli.c 13473 2012-09-07 02:45:49Z livings124 $
  *
  * Copyright (c) Transmission authors and contributors
  *
@@ -67,10 +67,15 @@
 #define MY_READABLE_NAME "transmission-cli"
 
 static bool showVersion              = false;
+static bool showInfo                 = 0; /* Foxconn add,edward zhang, 2012/11/23 @add the option Show torrent details */
 static bool verify                   = 0;
 static sig_atomic_t gotsig           = 0;
 static sig_atomic_t manualUpdate     = 0;
 
+#define	PID_FILE			"/var/run/transmission.pid"
+#define MAX_STAU_PATH  1024
+char ram_status_file[MAX_STAU_PATH] = {0};
+static int stop_process = 0;
 static const char * torrentPath  = NULL;
 
 static const struct tr_option options[] =
@@ -84,6 +89,7 @@ static const struct tr_option options[] =
     { 912, "encryption-tolerated", "Prefer unencrypted peer connections", "et", 0, NULL },
     { 'f', "finish",               "Run a script when the torrent finishes", "f", 1, "<script>" },
     { 'g', "config-dir",           "Where to find configuration files", "g", 1, "<path>" },
+    { 'i', "info",                 "Show torrent details and exit", "i",  0, NULL        },
     { 'm', "portmap",              "Enable portmapping via NAT-PMP or UPnP", "m",  0, NULL },
     { 'M', "no-portmap",           "Disable portmapping", "M",  0, NULL },
     { 'p', "port", "Port for incoming peers (Default: " TR_DEFAULT_PEER_PORT_STR ")", "p", 1, "<port>" },
@@ -141,10 +147,96 @@ onTorrentFileDownloaded( tr_session   * session UNUSED,
     waitingOnWeb = false;
 }
 
+void update_status_file(const tr_stat * st, const tr_torrent  * tor)
+{
+    FILE *fp=NULL;
+    /* update random status file */
+    char upStr[80];
+    char dnStr[80];
+    //tr_formatter_speed_KBps( upStr, st->pieceUploadSpeed_KBps, sizeof( upStr ) );
+    //tr_formatter_speed_KBps( dnStr, st->pieceDownloadSpeed_KBps, sizeof( dnStr ) );
+    fp=fopen(ram_status_file, "wt");
+	if(fp)
+	{
+		fprintf(fp,"process_pid=%d\n", getpid());
+		fprintf(fp,"peer_number=%d\n", st->peersConnected);
+		fprintf(fp,"file_name=%s\n", tr_torrentName(tor));
+		fprintf(fp,"file_size=%llu\n", st->sizeWhenDone); /*foxconn modified, edward zhang, 2012/12/06 use unsign long long type */
+		fprintf(fp,"finish_percent=%.1f\n", tr_truncd( 100 * st->percentDone, 1 ));
+		fprintf(fp,"down_speed=%.0f KB/s\n", st->pieceDownloadSpeed_KBps);
+		fprintf(fp,"up_speed=%.0f KB/s\n", st->pieceUploadSpeed_KBps);
+		if(st->error == TR_STAT_TRACKER_ERROR)
+		    fprintf(fp,"result=Tracker gave an error: %s\n", st->errorString);
+		else if(st->error == TR_STAT_TRACKER_ERROR)
+		    fprintf(fp,"result=Error: %s\n", st->errorString);
+		/* status need update*/
+		if( st->activity == TR_STATUS_DOWNLOAD )
+	        fprintf(fp,"task_status=%s\n","4");
+	    else if(st->activity == TR_STATUS_STOPPED)
+	    {
+	        /* Download manage restart, stop first, after restart, it still need
+	         * auto run task
+	         */
+	        if(stop_process == 1)
+                fprintf(fp,"task_status=%s\n","0");
+            else
+	            fprintf(fp,"task_status=%s\n","1");
+	    }
+        else if( st->activity == TR_STATUS_SEED )
+	    {
+                fprintf(fp,"task_status=%s\n","3");
+	    }
+        else if(stop_process == 2)
+	    {
+                fprintf(fp,"task_status=%s\n","1");
+	    }
+		fflush(fp);
+		fclose(fp);
+	}
+}
+/* Foxconn add start,edward zhang, 2012/11/23 @add the option Show torrent details */
+static void
+dumpInfo( const tr_info * inf )
+{
+    FILE *out = NULL;
+    int             i;
+    int             prevTier = -1;
+    tr_file_index_t ff;
+
+    out = fopen("/tmp/torrent.info","wt");
+	if(!out)
+		return ;
+
+    fprintf( out, "hash:\t" );
+    for( i = 0; i < SHA_DIGEST_LENGTH; ++i )
+        fprintf( out, "%02x", inf->hash[i] );
+    fprintf( out, "\n" );
+
+    fprintf( out, "name:\t%s\n", inf->name );
+
+    fprintf( out, "size:\t%" PRIu64 "\n", inf->totalSize);
+
+    if( inf->comment && *inf->comment )
+        fprintf( out, "comment:\t%s\n", inf->comment );
+    if( inf->creator && *inf->creator )
+        fprintf( out, "creator:\t%s\n", inf->creator );
+    if( inf->isPrivate )
+        fprintf( out, "private flag set\n" );
+
+    fprintf( out, "file(s):\n" );
+    for( ff = 0; ff < inf->fileCount; ++ff )
+        fprintf( out, "\t%s (%" PRIu64 ")\n", inf->files[ff].name,
+                 inf->files[ff].length );
+    fflush(out);
+	fclose(out);
+}
+/* Foxconn add end,edward zhang, 2012/11/23 @add the option Show torrent details */
+
 static void
 getStatusStr( const tr_stat * st,
               char *          buf,
-              size_t          buflen )
+              size_t          buflen,
+              tr_torrent      * tor )
 {
     if( st->activity == TR_STATUS_CHECK_WAIT )
     {
@@ -176,6 +268,7 @@ getStatusStr( const tr_stat * st,
             st->peersSendingToUs, st->peersConnected, dnStr,
             st->peersGettingFromUs, upStr,
             ratioStr );
+            update_status_file(st, tor);
     }
     else if( st->activity == TR_STATUS_SEED )
     {
@@ -291,7 +384,25 @@ main( int argc, char ** argv )
         return EXIT_FAILURE;
     }
     tr_free( fileContents );
+/* Foxconn add start,edward zhang, 2012/11/23 @add the option Show torrent details */
+    if( showInfo )
+    {
+        tr_info info;
 
+        if( !tr_torrentParse( ctor, &info ) )
+        {
+            fflush(stdout);
+            dumpInfo(&info );
+            tr_metainfoFree( &info );
+        }
+
+        tr_ctorFree( ctor );
+    	tr_bencFree( &settings );
+    	tr_sessionClose( h );
+    	return EXIT_SUCCESS;
+    }
+/* Foxconn add end,edward zhang, 2012/11/23 @add the option Show torrent details */
+    
     tor = tr_torrentNew( ctor, &error );
     tr_ctorFree( ctor );
     if( !tor )
@@ -300,8 +411,24 @@ main( int argc, char ** argv )
         tr_sessionClose( h );
         return EXIT_FAILURE;
     }
+    {
+		FILE *fp;
+    	fp = fopen(PID_FILE, "wt");
+    	if (fp) {
+        	fprintf(fp, "%d", getpid());
+        	fclose(fp);
+    	}else
+        	perror("Can't open PID file");
+        char status_path[64];
+        char cmd[64];
+        sprintf(status_path,"/var/run/down/mission_%d",getpid());
+        sprintf(cmd,"mkdir -p %s",status_path);
+        system(cmd);
+        sprintf(ram_status_file,"%s/status",status_path);
+    }
 
     signal( SIGINT, sigHandler );
+    signal( SIGTERM, sigHandler );
 #ifndef WIN32
     signal( SIGHUP, sigHandler );
 #endif
@@ -328,6 +455,8 @@ main( int argc, char ** argv )
             gotsig = 0;
             printf( "\nStopping torrent...\n" );
             tr_torrentStop( tor );
+            if(stop_process == 2)
+            	update_status_file(st,tor);
         }
 
         if( manualUpdate )
@@ -347,13 +476,24 @@ main( int argc, char ** argv )
 
         st = tr_torrentStat( tor );
         if( st->activity == TR_STATUS_STOPPED )
+        {
+            printf( "\nstatus change to stop, exit\n" );
+            update_status_file(st,tor);
             break;
+        }
+        else if( st->activity == TR_STATUS_SEED )
+        {
+            printf( "\nstatus change to seed,stop torrent and exit\n" );
+            update_status_file(st,tor);
+            tr_torrentStop( tor );
+            break;
+        }
 
-        getStatusStr( st, line, sizeof( line ) );
+        getStatusStr( st, line, sizeof( line ), tor );
         printf( "\r%-*s", LINEWIDTH, line );
 
-        if( messageName[st->error] )
-            fprintf( stderr, "\n%s: %s\n", messageName[st->error], st->errorString );
+        //if( messageName[st->error] )
+        //    fprintf( stderr, "\n%s: %s\n", messageName[st->error], st->errorString );
     }
 
     tr_sessionSaveSettings( h, configDir, &settings );
@@ -393,6 +533,8 @@ parseCommandLine( tr_benc * d, int argc, const char ** argv )
                       tr_bencDictAddBool( d, TR_PREFS_KEY_SCRIPT_TORRENT_DONE_ENABLED, true );
                       break;
             case 'g': /* handled above */
+                      break;
+            case 'i': showInfo = 1;
                       break;
             case 'm': tr_bencDictAddBool( d, TR_PREFS_KEY_PORT_FORWARDING, true );
                       break;
@@ -436,8 +578,14 @@ sigHandler( int signal )
     switch( signal )
     {
         case SIGINT:
-            gotsig = 1; break;
+            gotsig = 1;
+            stop_process = 1;
+            break;
 
+        case SIGTERM:
+            gotsig = 1;
+            stop_process = 2;
+            break;
 #ifndef WIN32
         case SIGHUP:
             manualUpdate = 1; break;

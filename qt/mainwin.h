@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: mainwin.h 13446 2012-08-19 00:01:54Z jordan $
  */
 
 #ifndef MAIN_WINDOW_H

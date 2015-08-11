@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: tr-icon.h 12648 2011-08-08 16:02:37Z jordan $
  */
 
 #ifndef GTR_ICON_H

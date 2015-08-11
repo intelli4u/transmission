@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: open-dialog.h 11721 2011-01-20 19:57:42Z jordan $
  */
 
 #ifndef GTR_OPEN_DIALOG_H

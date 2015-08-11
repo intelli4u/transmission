@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: create.c 12225 2011-03-24 22:57:39Z jordan $
  */
 
 #include <errno.h>

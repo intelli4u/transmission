@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: trevent.c 12228 2011-03-25 01:41:57Z jordan $
  */
 
 #include <assert.h>

@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: blocklist.h 12229 2011-03-25 05:34:26Z jordan $
  */
 
 #ifndef __TRANSMISSION__

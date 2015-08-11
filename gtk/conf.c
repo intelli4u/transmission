@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id$
+ * $Id: conf.c 13273 2012-04-08 16:02:48Z jordan $
  *
  * Copyright (c) Transmission authors and contributors
  *

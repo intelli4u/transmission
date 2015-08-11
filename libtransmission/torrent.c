@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: torrent.c 13573 2012-10-15 03:11:16Z jordan $
  */
 
 #include <signal.h> /* signal() */
@@ -773,8 +773,17 @@ setLocalErrorIfFilesDisappeared( tr_torrent * tor )
 
     if( disappeared )
     {
-        tr_deeplog_tor( tor, "%s", "[LAZY] uh oh, the files disappeared" );
-        tr_torrentSetLocalError( tor, "%s", _( "No data found! Ensure your drives are connected or use \"Set Location\". To re-download, remove the torrent and re-add it." ) );
+        /*Foxconn modified start by Gene Chen,01/21/2012@Downloading file disappears*/
+        char command[4096]={};
+        const tr_completion * trcomp;
+        tor->completion.sizeNow = 0;
+        sprintf(command, "rm -rf %s/resume/'%s'*.resume", tor->downloadDir, tor->info.name);
+        system(command);
+        return 0;
+
+        //tr_deeplog_tor( tor, "%s", "[LAZY] uh oh, the files disappeared" );
+        //tr_torrentSetLocalError( tor, "%s", _( "No data found! Ensure your drives are connected or use \"Set Location\". To re-download, remove the torrent and re-add it." ) );
+        /*Foxconn modified end by Gene Chen,01/21/2012@Downloading file disappears*/
     }
 
     return disappeared;
@@ -968,7 +977,7 @@ tr_torrentNew( const tr_ctor * ctor, int * setmeError )
     assert( tr_isSession( tr_ctorGetSession( ctor ) ) );
 
     r = torrentParseImpl( ctor, &tmpInfo, &hasInfo, &len );
-    if( r == TR_PARSE_OK )
+    if( r == TR_PARSE_OK || !hasAnyLocalData( tor ))/* Foxconn modified by Jesse Chen, 05/20/2013 */
     {
         tor = tr_new0( tr_torrent, 1 );
         tor->info = tmpInfo;

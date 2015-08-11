@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: torrent-cell-renderer.c 13553 2012-10-07 17:51:56Z jordan $
  */
 
 #include <gtk/gtk.h>

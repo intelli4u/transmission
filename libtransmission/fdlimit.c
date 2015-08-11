@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: fdlimit.c 13110 2011-12-14 05:42:15Z jordan $
  */
 
 #ifdef HAVE_POSIX_FADVISE

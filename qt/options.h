@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: options.h 13381 2012-07-09 23:18:40Z jordan $
  */
 
 #ifndef OPTIONS_DIALOG_H

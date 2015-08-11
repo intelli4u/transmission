@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id$
+ * $Id: dialogs.h 12068 2011-03-03 01:59:25Z jordan $
  *
  * Copyright (c) Transmission authors and contributors
  *

@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: tr-prefs.h 13107 2011-12-10 19:00:50Z jordan $
  */
 
 #ifndef GTR_PREFS_H

@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: inout.c 12582 2011-07-25 17:48:14Z jordan $
  */
 
 #include <assert.h>

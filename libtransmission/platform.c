@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: platform.c 12684 2011-08-15 00:10:06Z livings124 $
  */
 
 #ifdef WIN32

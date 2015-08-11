@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: bencode.c 13198 2012-02-04 00:34:39Z jordan $
  */
 
 #include <assert.h>

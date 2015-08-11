@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: make-dialog.cc 13555 2012-10-08 04:23:39Z jordan $
  */
 
 #include <cassert>

@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: history.c 12328 2011-04-06 23:27:11Z jordan $
  */
 
 #include <assert.h>

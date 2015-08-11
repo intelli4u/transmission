@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: bitfield.c 12932 2011-09-28 16:07:35Z jordan $
  */
 
 #include <assert.h>

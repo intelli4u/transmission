@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: inout.h 12545 2011-07-13 03:23:37Z jordan $
  */
 
 #ifndef __TRANSMISSION__

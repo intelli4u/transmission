@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: watch.c 12476 2011-05-30 15:28:55Z jordan $
  */
 #ifdef WITH_INOTIFY
   #include <sys/inotify.h>

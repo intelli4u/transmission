@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: port-forwarding.h 12224 2011-03-24 22:45:04Z jordan $
  */
 
 #ifndef __TRANSMISSION__

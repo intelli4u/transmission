@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: session.h 13499 2012-09-18 00:58:10Z livings124 $
  */
 
 #ifndef __TRANSMISSION__

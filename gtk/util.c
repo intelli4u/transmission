@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: util.c 13560 2012-10-13 16:47:26Z jordan $
  */
 
 #include <ctype.h> /* isxdigit() */

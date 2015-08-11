@@ -27,7 +27,7 @@ THE SOFTWARE.
 #ifndef _TR_LPD_H
 #define _TR_LPD_H
 
-/* $Id$ */
+/* $Id: tr-lpd.h 12204 2011-03-22 15:19:54Z jordan $ */
 
 int  tr_lpdInit( tr_session*, tr_address* );
 void tr_lpdUninit( tr_session* );

@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: notify.c 13265 2012-04-07 00:30:37Z jordan $
  */
 
 #include <string.h> /* strcmp() */

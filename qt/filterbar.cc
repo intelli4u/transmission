@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: filterbar.cc 12607 2011-08-01 22:24:24Z jordan $
  */
 
 #include <QString>

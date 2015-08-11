@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: verify.c 12204 2011-03-22 15:19:54Z jordan $
  */
 
 #include <string.h> /* memcmp() */

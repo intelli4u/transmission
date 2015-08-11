@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: prefs.cc 13448 2012-08-19 16:12:20Z jordan $
  */
 
 #include <cassert>

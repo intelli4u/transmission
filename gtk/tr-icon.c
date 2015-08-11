@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: tr-icon.c 13286 2012-04-16 18:42:26Z jordan $
  */
 
 #include <glib/gi18n.h>

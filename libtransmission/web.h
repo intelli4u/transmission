@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: web.h 12539 2011-07-10 15:24:51Z jordan $
  */
 
 #ifndef TR_HTTP_H

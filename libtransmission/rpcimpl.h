@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: rpcimpl.h 11709 2011-01-19 13:48:47Z jordan $
  */
 
 #ifndef TR_RPC_H

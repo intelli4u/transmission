@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: crypto.h 12365 2011-04-17 05:22:50Z jordan $
  */
 
 #ifndef TR_ENCRYPTION_H

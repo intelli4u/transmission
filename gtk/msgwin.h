@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: msgwin.h 12068 2011-03-03 01:59:25Z jordan $
  */
 
 #ifndef GTR_MSGWIN_H

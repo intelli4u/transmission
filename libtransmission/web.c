@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: web.c 13245 2012-03-04 13:21:42Z jordan $
  */
 
 #include <string.h> /* strlen(), strstr() */

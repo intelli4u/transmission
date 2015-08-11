@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: torrent-delegate.cc 13553 2012-10-07 17:51:56Z jordan $
  */
 
 #include <iostream>

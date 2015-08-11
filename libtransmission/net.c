@@ -1,6 +1,6 @@
 /******************************************************************************
  *
- * $Id$
+ * $Id: net.c 13329 2012-05-30 17:47:29Z jordan $
  *
  * Copyright (c) Transmission authors and contributors
  *

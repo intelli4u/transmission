@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: torrent-magnet.c 13576 2012-10-16 02:48:26Z jordan $
  */
 
 #include <assert.h>

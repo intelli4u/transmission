@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: file-tree.h 13384 2012-07-13 00:27:04Z jordan $
  */
 
 #ifndef QTR_TREE_FILE_MODEL

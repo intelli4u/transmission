@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: open-dialog.c 13475 2012-09-07 04:25:04Z jordan $
  */
 
 #include <glib/gi18n.h>

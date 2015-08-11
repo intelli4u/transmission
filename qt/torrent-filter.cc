@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: torrent-filter.cc 12653 2011-08-08 16:58:29Z jordan $
  */
 
 #include <iostream>

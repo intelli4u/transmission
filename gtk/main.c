@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id$
+ * $Id: main.c 13477 2012-09-07 17:18:17Z jordan $
  *
  * Copyright (c) Transmission authors and contributors
  *

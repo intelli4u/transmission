@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: torrent-ctor.c 12234 2011-03-25 17:42:47Z jordan $
  */
 
 #include <errno.h> /* EINVAL */

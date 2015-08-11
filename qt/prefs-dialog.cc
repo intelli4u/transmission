@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: prefs-dialog.cc 13295 2012-05-09 17:37:14Z jordan $
  */
 
 #include <cassert>

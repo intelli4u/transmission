@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: cache.h 11782 2011-01-29 18:56:53Z jordan $
  */
 
 #ifndef __TRANSMISSION__

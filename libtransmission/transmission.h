@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id$
+ * $Id: transmission.h 13397 2012-07-23 15:28:27Z jordan $
  *
  * Copyright (c) Transmission authors and contributors
  *

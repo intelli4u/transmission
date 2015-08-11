@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: file-tree.cc 13395 2012-07-22 17:01:52Z jordan $
  */
 
 #include <cassert>

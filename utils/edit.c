@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: edit.c 13191 2012-02-03 16:44:07Z jordan $
  */
 
 #include <stdio.h> /* fprintf() */

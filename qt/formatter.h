@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: formatter.h 12429 2011-05-12 20:21:27Z jordan $
  */
 
 #ifndef QTR_UNITS

@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: app.h 12595 2011-07-26 02:56:30Z jordan $
  */
 
 #ifndef QTR_APP_H

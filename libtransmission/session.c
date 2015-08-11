@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: session.c 13502 2012-09-18 03:46:01Z livings124 $
  */
 
 #include <assert.h>

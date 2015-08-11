@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: filterbar.h 11406 2010-11-14 05:03:38Z charles $
  */
 
 #ifndef QTR_FILTERBAR_H

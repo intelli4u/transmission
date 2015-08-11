@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: torrent-model.h 11125 2010-08-05 15:01:40Z charles $
  */
 
 #ifndef QTR_TORRENT_MODEL_H

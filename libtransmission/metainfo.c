@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: metainfo.c 13568 2012-10-14 18:10:17Z jordan $
  */
 
 #include <assert.h>

@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: bandwidth.h 12509 2011-06-19 18:34:10Z jordan $
  */
 
 #ifndef __TRANSMISSION__

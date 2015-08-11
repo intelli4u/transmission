@@ -7,7 +7,7 @@
  *
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
- * $Id$
+ * $Id: show.c 13475 2012-09-07 04:25:04Z jordan $
  */
 
 #include <stdio.h> /* fprintf() */

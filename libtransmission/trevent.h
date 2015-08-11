@@ -7,7 +7,7 @@
  * This exemption does not extend to derived works not owned by
  * the Transmission project.
  *
- * $Id$
+ * $Id: trevent.h 12230 2011-03-25 06:20:12Z jordan $
  */
 
 #ifndef __TRANSMISSION__
